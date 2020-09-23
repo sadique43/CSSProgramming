@@ -1,0 +1,61 @@
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<style>
+.grid div:nth-child(even){
+background:linear-gradient(red,orange,yellow);
+}.grid div:nth-child(odd){
+background:linear-gradient(blue,violet,yellow);
+}
+.grid
+{
+display:grid;
+grid-template-columns: 1fr 1fr ;
+grid-template-rows: 1fr 1fr 1fr 1fr; 
+grid-template-areas:". title title ." 
+                    ". header header ." 
+					". sidebar content ."
+					". footer footer .";
+
+}
+.title{
+//grid-column-start: 1;
+//grid-column-end:3;
+//short hand is: grid-column: 1(start)/3(end);
+//grid-row-end: span 2;
+grid-area:title;
+}
+.header{
+grid-area:header;
+}
+.sidebar{
+grid-area:sidebar;
+}
+.content{
+grid-area:content;
+justify-self:center;
+}
+.footer{
+grid-area:footer;
+}
+
+</style>
+</head>
+<body>
+
+<div class="grid">
+<div class="title">title</div>
+<div clas="header">header</div>
+<div class="sidebar">sidebar</div>
+<div class="content">content</div>
+<div class="footer">footer</div>
+
+
+
+</div>
+
+
+
+</body>
+</html>
